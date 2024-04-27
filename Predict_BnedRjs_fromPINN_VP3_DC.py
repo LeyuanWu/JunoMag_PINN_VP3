@@ -14,19 +14,18 @@ from LW_DataReadWrite import *;
 # TODO ******************** Parameters ******************** #
 pj1=1; pj2=50;            # orbit 1-33 | orbit 1-50 | others
 cutRType=2;               # 1: 2.5Rj; 2: 4.0Rj; 3: 7.0Rj
-nLayer=7; nNeuron=40;
+nLayer=6; nNeuron=40;
 actiFun='swish';          # 'tanh' 'gelu' 'siren' 'swish' 'relu' 'sigmoid'
 opti='Adam';              # 'Adam'
 DW=1;                     # Dynamic Weights 1/0 for On/Off
 k=1; c=0; n0=3000; dn=600;   # 2023WuCX
 nEpo=12000;
 BS=10000; 
-rdSeed=6789012;
+rdSeed=67890;
 # TODO ********************** end ************************* #
-fileObs='input/JUNO_PINN_VP3_PJ%02d_%02d_4.0Rj_NN07_040_swish_Adam_DW1_'%(pj1,pj2)\
+fileObs='input/JUNO_PINN_VP3_PJ%02d_%02d_4.0Rj_NN06_040_swish_Adam_DW1_'%(pj1,pj2)\
      +'RADk1c0n3000d600_nEpo0012000_BS0010000_Seed12345_EstBxyz_Itfc.txt';
-fileCol='input/Collocation_Random_minR0.70_maxR1.00_60000.txt';
-# fileCol='input/Collocation_Random_minR0.80_maxR1.00_40000.txt';
+fileCol='input/Collocation_Random_minR0.80_maxR1.00_40000.txt';
 fNameHead, model = BuildPINN_DC(pj1,pj2,cutRType,fileObs,fileCol,nLayer,nNeuron,\
      actiFun,opti,DW,k,c,n0,dn,nEpo,BS,rdSeed);
 # %%
@@ -42,8 +41,7 @@ model.saver.restore(model.sess,save_path='./'+fNameHead+'/ckpt-%d'%(pkEpo));
 # %%
 # # ! Estimations of [Bn,Be,Bd] & |B| at <Rj>s and Save to ascii file
 # TODO ******************** Parameters ******************** #
-RJs = [1.00,0.95,0.90,0.85,0.80,0.75,0.70];   # For PINN Downward Continuation
-# RJs = [1.00,0.95,0.90,0.85,0.80];   # For PINN Downward Continuation
+RJs = [1.00,0.95,0.90,0.85,0.80];   # For PINN Downward Continuation
 LambdaP=np.linspace(np.deg2rad(0.5),2*np.pi-np.deg2rad(0.5),360);
 ThetaP=np.linspace(np.deg2rad(0.5),np.pi-np.deg2rad(0.5),180); # ! Co-latitude
 # TODO ********************** end ************************* #

@@ -39,8 +39,7 @@ model.saver.restore(model.sess,save_path='./'+fNameHead+'/ckpt-%d'%(pkEpo));
 # %%
 # # ! Estimations of [Bn,Be,Bd] & |B| at <Rj>s and Save to ascii file
 # TODO ******************** Parameters ******************** #
-# RJs=[1.00,1.05,1.10,1.15,1.20];    # For PINN traning above 1.00Rj
-RJs=[1.25,1.30,1.35,1.40,1.45,1.50,1.60,1.70,1.80,1.90,2.00,2.50,3.00,3.50,4.00];
+RJs=[1.00,1.10,1.20,1.30,1.40,1.50,1.60,1.70,1.80,1.90,2.00,2.50,3.00,3.50,4.00];
 LambdaP=np.linspace(np.deg2rad(0.5),2*np.pi-np.deg2rad(0.5),360);
 ThetaP=np.linspace(np.deg2rad(0.5),np.pi-np.deg2rad(0.5),180); # ! Co-latitude
 # TODO ********************** end ************************* #
