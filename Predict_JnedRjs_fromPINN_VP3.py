@@ -12,7 +12,7 @@ from LW_DataReadWrite import *;
 # %%
 # # ! Obs & Col & NN Hyper-Parameters 
 # TODO ******************** Parameters ******************** #
-pj1=1; pj2=50;            # orbit 1-50 | orbit 1-24 | orbit 25-50
+pj1=1; pj2=50;            # orbit 1-33 | orbit 1-50 | others
 cutRType=2;               # 1: 2.5Rj; 2: 4.0Rj; 3: 7.0Rj
 nLayer=6; nNeuron=40;
 actiFun='swish';          # 'tanh' 'gelu' 'siren' 'swish' 'relu' 'sigmoid'
@@ -39,8 +39,7 @@ model.saver.restore(model.sess,save_path='./'+fNameHead+'/ckpt-%d'%(pkEpo));
 # %%
 # # ! Estimations of [Jn,Je,Jd] & |J| at <Rj>s and Save to ascii file
 # TODO ******************** Parameters ******************** #
-# RJs=[1.00,1.10,1.20,1.30,1.40,1.50,2.00,4.00];    # For PINN traning above 1.00Rj
-RJs=[1.25,1.30,1.35,1.40,1.45,1.50,1.60,1.70,1.80,1.90,2.00,2.50,3.00,3.50,4.00];
+RJs=[1.00,1.10,1.20,1.30,1.40,1.50,1.60,1.70,1.80,1.90,2.00,2.50,3.00,3.50,4.00];
 LambdaP=np.linspace(np.deg2rad(0.5),2*np.pi-np.deg2rad(0.5),360);
 ThetaP=np.linspace(np.deg2rad(0.5),np.pi-np.deg2rad(0.5),180); # ! Co-latitude
 scaleUnit = model.cordScale / (4*np.pi); # Gauss/km to A/m^2
