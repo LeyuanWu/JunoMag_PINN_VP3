@@ -12,7 +12,7 @@ from LW_DataReadWrite import *;
 # %%
 # # ! Obs & Col & NN Hyper-Parameters 
 # TODO ******************** Parameters ******************** #
-pj1=1; pj2=50;            # orbit 1-50 | orbit 1-24 | orbit 25-50
+pj1=1; pj2=50;            # orbit 1-33 | orbit 1-50 | others
 cutRType=2;               # 1: 2.5Rj; 2: 4.0Rj; 3: 7.0Rj
 nLayer=6; nNeuron=40;
 actiFun='swish';          # 'tanh' 'gelu' 'siren' 'swish' 'relu' 'sigmoid'

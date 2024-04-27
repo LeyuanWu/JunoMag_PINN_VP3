@@ -7,19 +7,19 @@ import numpy as np;
 from LW_PINN_VP3_JUNO import *;
 # %% # ! Model setting
 # TODO ******************** Parameters ******************** #
-pj1=1; pj2=33; # orbit 1-50 | orbit 1-24 | orbit 25-50 | others
+pj1=1; pj2=33; # orbit 1-33 | orbit 1-50 | others
 cutRType=2; # 1: 2.5Rj; 2: 4.0Rj; 3: 7.0Rj
 # TODO ********************** end ************************* #
 # %% # ! NN Hyper-Parameters 
 # TODO ******************** Parameters ******************** #
-nLayer=6; nNeuron=50;
+nLayer=6; nNeuron=40;
 actiFun='swish';              # 'tanh' 'gelu' 'siren' 'swish' 'relu' 'sigmoid'
 opti='Adam';                  # 'Adam'
 DW=1;                         # Dynamic Weights 1/0 for On/Off
 k=1; c=0; n0=3000; dn=600;    # 2023WuCX
 nEpo=12000; nBatPerEpo=30;
 BS=10000; 
-rdSeed=6789012;
+rdSeed=67890;
 # TODO ********************** end ************************* #
 ######## Build <File Name Head>
 fNameHead=BuildFileNameHead(pj1,pj2,cutRType,nLayer,nNeuron,\
@@ -31,7 +31,7 @@ fContHead=BuildFileContentHead(pj1,pj2,cutRType,nLayer,nNeuron,\
 print('\n*****************************************\n',flush=True);
 print('<File Content Head>:\n%s'%(fContHead),flush=True);
 ######## Load <OBS> points
-fileObs='input/JUNO_PINN_VP3_PJ%02d_%02d_4.0Rj_NN06_050_swish_Adam_DW1_'%(pj1,pj2)\
+fileObs='input/JUNO_PINN_VP3_PJ%02d_%02d_4.0Rj_NN06_040_swish_Adam_DW1_'%(pj1,pj2)\
      +'RADk1c0n3000d600_nEpo0012000_BS0010000_Seed12345_EstBxyz_Itfc.txt';
 nObs,xObs,yObs,zObs,bxObs,byObs,bzObs=\
      LoadObsData_DC(fileObs,showinfo=True);
