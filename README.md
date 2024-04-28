@@ -41,8 +41,8 @@ ________________________________________________________________________________
     - ***Above*** 1.00 $R_J$: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_JnedRjs_fromPINN_VP3.py)
     - ***Below*** 1.00 $R_J$: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_JnedRjs_fromPINN_VP3_DC.py)
   - Predict magnetic vector fields at *Interface* $r=1.00 R_J$ using `PINN models` and write to ascii file:
-    - ***Above*** 1.00 $R_J$: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_BxyzITFC_fromPINN_VP3_JUNO.py)
-    - ***Below*** 1.00 $R_J$: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_BxyzITFC_fromPINN_VP3_DC_JUNO.py)
+    - ***Above*** 1.00 $R_J$: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_BxyzITFC_fromPINN_VP3.py)
+    - ***Below*** 1.00 $R_J$: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_BxyzITFC_fromPINN_VP3_DC.py)
   - Predict magnetic vector fields at *Juno Observation Locations* using `Spherical Harmonic Models` and write to ascii file: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_BxyzOBS_fromSH_MagDisc.py)
   - Predict magnetic vector fields at Multiple $R_J$ using `Spherical Harmonic Models` and write to ascii file: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_BnedRjs_fromSH.py)
 ______________________________________________________________________________________________
