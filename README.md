@@ -10,7 +10,7 @@ ________________________________________________________________________________
   - Orbit 1-33 (Prime mission)
   - Orbit 1-50 (Prime + Extended mission)
   - Sampling rate: 30 sec
-  - Within 4.00 $R_j$, orbit 2 not used
+  - Within 4.00 $R_J$, orbit 2 not used
   - Format: **PJ**, **Year**, **Decimal-Day**, **x**, **y**, **z**, **Bx**, **By**, **Bz**
 - `Spherical Harmonic Models` of Juno magnetic data
   - `JRM33_I30`: degree 30 model of (Connerney et al., 2022)
@@ -20,38 +20,31 @@ ________________________________________________________________________________
   - Random points within the region $[1.00 R_J, 4.00 R_J]$
   - Random points within the region $[0.80 R_J, 1.00 R_J]$
   - Random points on the surface $r = 1.00 R_J$
-  - Format: **x**, **y**, **z**
+  - Format: **x**, **y**, **z**  <br>
   *Generated based on the fact*: *Normalized vector of Gaussian variables is uniformly distributed on the sphere*
 ______________________________________________________________________________________________
 ## Python Code and Jupyter Notebook
-  - PINN training ***Above*** 1.00 $R_J$ (Obtain NN Jupiter Magnetic Model): [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/PINN_VP3_JUNO.py)
+
+  - Plot comparison of RMS errors of `PINN Models` and `SH models` on each orbit of *Juno Observation Orbits*: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/DataMisfit_SHs_vs_PINNs_PJ01_50_binByPJ.ipynb)
+  - Plot showing `PINN models` predicted physical misfit (current density $|\mathbf{J}|$) on Multiple $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Plot_JnedRjs.ipynb)
+  - Plot comparison of $B_{r}$ predicted by `PINN models` and `SH models` on Multiple $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Plot_BnedRjs_SHs_vs_PINNs.ipynb)
+  - Plot comparison of Lowes spectrums of `PINN models` and `SH models`: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/SHs_Spectrum2D_Lowes.ipynb)
+  - Table showing the RMS errors of `Spherical Harmonic Models` with increasing degree $n$ at different subset of *Juno Observation Orbits*: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/DataMisfit_SHs_MagDisc.ipynb)
+  - Table showing the RMS errors of `PINN Models` at different subset of *Juno Observation Orbits*: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/DataMisfit_PINNs.ipynb)
+  - PINN training ***Above*** 1.00 $R_J$ (NN Jupiter Magnetic Model): [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/PINN_VP3_JUNO.py)
   - PINN training ***Below*** 1.00 $R_J$ (Downward Continuation): [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/PINN_VP3_DC_JUNO.py)
-  - Table & Plot showing Juno Observation and Collocation Cloud distributions used in our PINN training [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Table_Plot_Obs_Col.ipynb)
-  - Plot `PINN models` predicted $B_{\lambda}$, $B_{\theta}$, $B_{r}$ on multiple $R_J$:
-    - ***Above*** 1.00 $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Plot_BnedRjs_PINN_VP3_JUNO.ipynb)
-    - ***Below*** 1.00 $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Plot_BnedRjs_PINN_VP3_DC_JUNO.ipynb)
-  - Plot Loss functions, Dynamic weights and Learning Rate
-    - ***Above*** 1.00 $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Plot_LossFunc_PINN_VP3_JUNO.ipynb)
-    - ***Below*** 1.00 $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Plot_LossFunc_PINN_VP3_DC_JUNO.ipynb)
-  - Plot comparison of $B_{r}$ (or other components) predicted by `PINN models` and `SH models` on multiple $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Plot_BnedRjs_SHs_vs_PINNs.ipynb)
-  - Plot comparison of Lowes Spectrums of `PINN models` and `SH models`: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Table_Plot_LowesSpectrum.ipynb)
-  - Predict magnetic vector fields at ***Juno Observation Locations*** using `PINN models` and write to ascii file: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/PredictBs_PINN_VP3_JUNO.ipynb)
-    - Format: **PJ**, **Year**, **Decimal-Day**, **x**, **y**, **z**, **Bx**, **By**, **Bz**
-  - Predict magnetic vector fields at ***Multiple*** $R_J$ using `PINN models` and write to ascii file:
-    - Format: **Lon**, **Lat**, $B_{\theta}$, $B_{\lambda}$, $B_{r}$, $|\mathbf{B}|$;
-    - ***Above*** 1.00 $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/PredictBs_PINN_VP3_JUNO.ipynb)
-    - ***Below*** 1.00 $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/PredictBs_PINN_VP3_DC_JUNO.ipynb)
-  - Predict magnetic vector fields at ***User-Defined*** locations using `PINN models` and write to ascii file:
-    - Format: **x**, **y**, **z**, **Bx**, **By**, **Bz**
-    - ***Above*** 1.00 $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/PredictBs_PINN_VP3_JUNO.ipynb)
-    - ***Below*** 1.00 $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/PredictBs_PINN_VP3_DC_JUNO.ipynb)
-  - Predict magnetic vector fields at ***Juno Observation Locations*** & ***Multiple*** $R_J$ using `Spherical Harmonic Models` and write to ascii file: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/PredictBs_FromSHCs.ipynb)
-  - Table showing the RMS errors of `Spherical Harmonic Models` computed at different subset of ***Juno Observation Orbits***: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Table_DataMissfit_SHs.ipynb)
-  - Table & Plot showing the RMS errors of `PINN Models` `PINN33e` & `PINN50e` computed at different subset of ***Juno Observation Orbits***: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Table_Plot_DataMissfit_PINNs.ipynb)
-  - Plot comparing RMS errors of `PINN Models`and `SH models` on each orbit of ***Juno Observation Orbits***: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Plot_DataMissfit_SHs_vs_PINNs.ipynb)
-  - Table & Plot showing `PINN models` predicted physical misfit <current density $|\mathbf{J}|$ > on multiple $R_J$
-    - ***Above*** 1.00 $R_J$ (.vs. data missfit < $\delta |\mathbf{B}|$ >): [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Table_Plot_J_vs_dB_Rjs_PINN_VP3_JUNO.ipynb)
-    - ***Below*** 1.00 $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Table_Plot_J_Rjs_PINN_VP3_DC_JUNO.ipynb)
+  - Predict magnetic vector fields at *Juno Observation Locations* using `PINN models` and write to ascii file: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_BxyzOBS_fromPINN_VP3.py)
+  - Predict magnetic vector fields at Multiple $R_J$ using `PINN models` and write to ascii file:
+    - ***Above*** 1.00 $R_J$: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_BnedRjs_fromPINN_VP3.py)
+    - ***Below*** 1.00 $R_J$: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_BnedRjs_fromPINN_VP3_DC.py)
+  - Predict electric currents at Multiple $R_J$ using `PINN models` and write to ascii file:
+    - ***Above*** 1.00 $R_J$: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_JnedRjs_fromPINN_VP3.py)
+    - ***Below*** 1.00 $R_J$: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_JnedRjs_fromPINN_VP3_DC.py)
+  - Predict magnetic vector fields at *Interface* $r=1.00 R_J$ using `PINN models` and write to ascii file:
+    - ***Above*** 1.00 $R_J$: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_BxyzITFC_fromPINN_VP3_JUNO.py)
+    - ***Below*** 1.00 $R_J$: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_BxyzITFC_fromPINN_VP3_DC_JUNO.py)
+  - Predict magnetic vector fields at *Juno Observation Locations* using `Spherical Harmonic Models` and write to ascii file: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_BxyzOBS_fromSH_MagDisc.py)
+  - Predict magnetic vector fields at Multiple $R_J$ using `Spherical Harmonic Models` and write to ascii file: [Python Code](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Predict_BnedRjs_fromSH.py)
 ______________________________________________________________________________________________
 ## Output NN Models
   - Models (Last 10 models of each training)
