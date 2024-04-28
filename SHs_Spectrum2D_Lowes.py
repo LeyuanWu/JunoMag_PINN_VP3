@@ -13,6 +13,8 @@ import matplotlib.colors as colors;
 from matplotlib.ticker import LogLocator as LL;
 from matplotlib.ticker import FuncFormatter as FF;
 from LW_SH_Mag import *;
+import warnings
+warnings.filterwarnings( "ignore", module = "matplotlib\..*" )
 # %%
 def SHCs_to_Spectrum2d(shcFile, nmax):
     ######## Load
@@ -58,7 +60,7 @@ RS = [0.75, 0.80, 0.85, 1.00];
 COLORs = ['C0', 'C1', 'C2', 'C3'];
 LS = ['-', '--', ':'];
 # TODO ********************** end ************************* #
-fig1 = plt.figure(figsize=(9,11), dpi=150,layout='constrained');
+fig1 = plt.figure(figsize=(9,11), dpi=150);
 gs = fig1.add_gridspec(nrows=17, ncols=11);
 gsLST=[gs[0:3,3:8],gs[4:7,0:5],gs[4:7,6:11],
          gs[8:13,0:11],gs[14:17,0:11]];
@@ -87,10 +89,11 @@ for iData in range(len(DataLst)):
     ax0.tick_params(axis='x',which='major',labelrotation=0,labelsize='x-small');
     ax0.tick_params(axis='y',which='major',labelrotation=0,labelsize='x-small');
     data = np.abs(DataLst[iData]);
-    pc1 = ax0.pcolor(M2d, N2d, data, norm=colors.LogNorm(vmin=10**(-2), vmax=10**(6)),\
+    pc1 = ax0.pcolormesh(M2d, N2d, data, norm=colors.LogNorm(vmin=10**(-2), vmax=10**(6)),\
                     cmap='viridis', shading='auto');
     if iData in [0]:
-        cb1=fig1.colorbar(pc1,cax=ax0.inset_axes([1.1, 0.00, 0.05, 1.0]),orientation='vertical'); 
+        cb_ax = ax0.inset_axes([1.1, 0.00, 0.05, 1.0]);
+        cb1=fig1.colorbar(pc1,cax=cb_ax,orientation='vertical'); 
         cb1.ax.tick_params(labelsize='x-small');
         cb1.minorticks_off();
         cb1.set_label('$|g_{n}^{m}|$ or $|h_{n}^{m}|$ (nT)',fontsize = 'x-small');
