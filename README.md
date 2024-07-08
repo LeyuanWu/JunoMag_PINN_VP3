@@ -24,7 +24,7 @@ ________________________________________________________________________________
   *Generated based on the fact*: *Normalized vector of Gaussian variables is uniformly distributed on the sphere*
 ______________________________________________________________________________________________
 ## Python Code and Jupyter Notebook
-
+  - Training diagnostics from training model `PINN50e`: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Plot_LossFunc_PINN_VP3.ipynb)
   - Plot comparison of RMS errors of `PINN Models` and `SH models` on each orbit of *Juno Observation Orbits*: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/DataMisfit_SHs_vs_PINNs_PJ01_50_binByPJ.ipynb)
   - Plot showing `PINN models` predicted physical misfit (current density $|\mathbf{J}|$) on Multiple $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Plot_JnedRjs.ipynb)
   - Plot comparison of $B_{r}$ predicted by `PINN models` and `SH models` on Multiple $R_J$: [Jupyter Notebook](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/Plot_BnedRjs_SHs_vs_PINNs.ipynb)
