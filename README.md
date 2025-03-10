@@ -55,6 +55,11 @@ ________________________________________________________________________________
       - `PINN33i`: downwards extrapolation model of `PINN33e` in $[0.80 R_J, 1.00 R_J]$
       - `PINN50i`: downwards extrapolation model of `PINN50e` in $[0.80 R_J, 1.00 R_J]$
 ______________________________________________________________________________________________
+## Output SH Models
+- `Spherical Harmonic Models` obtained from least square estimation of SHCs using `PINN Models` predicted magnetic fields at 1.00 $R_J$
+  - `SH_PINN33e`: degree 35 model of `PINN33e`
+  - `SH_PINN50e`: degree 35 model of `PINN50e`
+______________________________________________________________________________________________
 ## Output data
 - `PINN models` and `Spherical Harmonic Models` predicted magnetic vector fields at *Juno Observation Locations*:
    - Format: **PJ**, **Year**, **Decimal-Day**, **x**, **y**, **z**, **Bx**, **By**, **Bz**
