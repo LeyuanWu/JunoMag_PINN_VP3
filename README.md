@@ -57,8 +57,8 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________
 ## Output SH Models
 - `Spherical Harmonic Models` obtained from least square estimation of SHCs using `PINN Models` predicted magnetic fields at 1.00 $R_J$
-  - `SH_PINN33e`: degree 35 model of `PINN33e`
-  - `SH_PINN50e`: degree 35 model of `PINN50e`
+  - [SH_PINN33e](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/SH_Models/SH_PINN33e.txt): degree 35 model of `PINN33e`
+  - [SH_PINN50e](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/SH_Models/SH_PINN50e.txt): degree 35 model of `PINN50e`
 ______________________________________________________________________________________________
 ## Output data
 - `PINN models` and `Spherical Harmonic Models` predicted magnetic vector fields at *Juno Observation Locations*:
