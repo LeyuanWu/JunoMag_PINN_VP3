@@ -60,7 +60,7 @@ ________________________________________________________________________________
   - [SH_PINN33e](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/SH_Models/SH_PINN33e.txt): degree 35 model of `PINN33e`
   - [SH_PINN50e](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/SH_Models/SH_PINN50e.txt): degree 35 model of `PINN50e`
 - `Spherical Harmonic Models` obtained from least square estimation of SHCs using `PINN Models` predicted magnetic fields at multiple other $R_J$
-  - [SH_PINN[33/50]e_[0.800.85/0.90/0/95]Rj_degree35](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/SH_Models): degree 35 model of `PINN33e` or `PINN50e` at multiple reference $R_J$
+  - [SH_PINN[33/50]e_[0.80/0.85/0.90/0/95]Rj_degree35](https://github.com/LeyuanWu/JunoMag_PINN_VP3/blob/main/SH_Models): degree 35 model of `PINN33e` or `PINN50e` at multiple reference $R_J$
 ______________________________________________________________________________________________
 ## Output data
 - `PINN models` and `Spherical Harmonic Models` predicted magnetic vector fields at *Juno Observation Locations*:
