@@ -2,6 +2,13 @@
 Data and Code to reproduce the results in the manuscript: <br>
 ***Reconstructions of Jupiter's magnetic field using physics-informed neural networks (PINN)***
 
+Philip W Livermore, Leyuan Wu, Longwei Chen, Sjoerd de Ridder
+
+Monthly Notices of the Royal Astronomical Society, Volume 533, Issue 4, October 2024, Pages 4058–4067
+
+https://doi.org/10.1093/mnras/stae1928
+
+
 > [!NOTE]  
 > This is the `Vector Potential Version`
 ______________________________________________________________________________________________
